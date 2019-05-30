@@ -1,4 +1,4 @@
-# The Exercises and notes needed for Launch School.
+# The Exercises and notes for Launch School LS100 Intro to programming with Ruby.
 
 [Where you'll find the book](https://launchschool.com/books/ruby/read/introduction)
 
