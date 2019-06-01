@@ -27,6 +27,8 @@ a.map { |monster| "#{monster} is the fiercest of all monsters."}
 
 * When you don't know the index of the element, but you know the element value that you want to delete in an array, then you'll want to use the `.delete`, which looks like `a.delete(element_value)`.
 
+* Using the `.delete` method will return the deleted value.
+
 * When you want the unique elements in an array, you can use the `.uniq` method.
 * `a.uniq` returns a new array of only the unique elements in a, but does not overwrite the original array, a.
 * When you want to mutate the original array with `.uniq`, use the bang method. So, `a.uniq!` will modify the array 'a' to only the unique values of 'a'.
@@ -75,16 +77,40 @@ a.each_index { |i| "Here's an index #{i} }
 * An example of `.each_with_index`
 
 ```ruby
-
-
+irb: 001 > a = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb: 002 > a.each_with_index { |val, idx| puts "#{idx+1}. #{val}" }
+1. 1
+2. 2
+3. 3
+4. 4
+5. 5
+# => [1, 2, 3, 4, 5]
 ```
+
+* When you want to sort an array, you can use the `a.sort` method.
+* `a.sort` returns a new method and leaves the original alone.
+* `a.product(another_array)` returns a combination of each of the combined elements.
+
+```ruby
+irb :001 > [1, 2, 3].product([4, 5])
+=> [[1, 4], [1, 5], [2, 4], [2, 5], [3, 4], [3, 5]]
+```
+
+
+
 ## each vs map ##
+* `each` is a method called on an array. It usually is passed a block which would apply each element to the block, allowing you to manipulate the values in the array.
 
+* When you don't `a.each` a block, ruby returns an enumerator
+`#=> #<Enumerator: ...>`
 
-## Summary ##
+* `map` also applys array elements to a block. But unlike each, map creates and returns a new array containing the values returned by the block.
+
+* Just like your use of puts, its return values is nil, and so using puts in map will result in a new array of nil values for your array.
+
+* Use each for iteration. Use map for manipulation.
 
 
 ## Exercises ##
-
-
-
+* When you have an array and you reference an index beyond the length of the array, ruby returns `nil` and does not throw an error.
