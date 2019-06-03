@@ -70,7 +70,9 @@ greeting("Bob", {age: 62, city: "New York City"})
 
 ## Common Hash Methods ##
 
-The hash method `hash_01.has_key?(:key_name)`  returns a boolean if the hash contains a key.
+The hash method `hash_01.has_key?(:key_name)`  returns a boolean of the key passed to `has_key?`.
+
+The hash method `hash_01.has_value?("value you're looking for")`  returns a boolean of the value passed to `has_value?`.
 
 The hash method `.select` allows you to test a hash's pairs and returns a hash where those tests evaluated to true. 
 
