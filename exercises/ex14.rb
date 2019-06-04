@@ -6,7 +6,15 @@ contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]
 contacts = {"Joe Smith" => {}}
 contact_type = [:email, :address, :phone]
 # As a bonus, see if you can figure out how to make it work with multiple entries in the contacts hash.
+p contacts["Joe Smith"]
 
-contact_data.each |info|
-  
+contacts.each do |name, hash|
+  contact_type.each do |type|
+    hash[type] = contact_data.shift
+  end
 end
+
+p contacts
+
+# Okay, so this one was tough, and I needed to look at the solution for a bigger hint. I can see my first sticking point as manipulation of hashes from arrays and vice versa.
+
